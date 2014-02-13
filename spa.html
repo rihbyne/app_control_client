@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>single page applications</title>
+        <style type="text/css" media="all">
+            body {
+                width            : 100%;
+                height           : 100%;
+                overflow         : hidden;
+                background-color : #777;
+            }
+
+            #spa {
+                position         : absolute;
+                top              : 8px;
+                left             : 8px;
+                bottom           : 8px;
+                right            : 8px;
+                border-radius    : 8px 8px 0 8px;
+                background-color : #fff;
+            }
+
+            .spa-slider {
+                position         : absolute;
+                bottom           : 0;
+                right            : 2px;
+                width            : 300px;
+                height           : 16px;
+                cursor           : pointer;
+                border-radius    : 8px 0 0 0;
+                background-color : #f00;
+            }
+        </style>
+        <script type="text/javascript" src=
+        "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <script type="text/javascript" charset="utf-8">
+            /*jslint
+              browser : true, continue : true,
+              devel : true, indent : 2, maxerr : 50,
+              newcap : true, nomen : true, plusplus : true,
+              regexp : true, sloppy : true, vars : true,
+              white : true
+            */
+        /*global jQuery */
+
+        //This is a Module callled 'spa'
+        //It provides chatslider capabilities.
+        //
+        var spa  = (function ($) {
+
+            //declare module level scope variables
+            var
+            configMap = {
+            //set variable constants
+            extended_title   : 'click to expand',
+            retracted_title  : 'click to retract',
+            extended_height  : 434,
+            retracted_height : 16,
+            template_html    : '<div class="spa-slider"><\/div>'
+            },
+            //Declare all other module level scope variables
+            $chatSlider,toggleSlider,onClickSlider,initModule;
+
+            //all DOM manipulation methods declared in this section
+            toggleSlider = function () {
+                //This function alters the html5 elements.
+                //In this case,it actually expands or retracts the 
+                //slider without any cross browser compatibility issues.
+                var
+                slider_height = $chatSlider.height();
+
+                //extend the chatSlider if it is retracted
+                if (slider_height === configMap.retracted_height) {
+                    $chatSlider
+                    .animate({height : configMap.extended_height})
+                    .attr('title', configMap.retracted_title);
+                    return true;
+                }
+
+                //retract the slider if it already extended
+                if (slider_height === configMap.extended_height) {
+                    $chatSlider
+                    .animate({height : configMap.retracted_height})
+                    .attr('title', configMap.extended_title);
+                    return true;
+                }
+            };
+
+            //declare event handler methods here.
+            //event handler functions should call other methods for logic updates and 
+            //improvisation.they should be kept small and focused.
+            onClickSlider = function  (event) {
+                // this function calls toggleSlider 
+                toggleSlider();
+                return false;
+            };
+
+            //declare initial functions.
+            //This method is exported as public method.
+            initModule = function  ($container) {
+                //render the html
+                $container.html(configMap.template_html);
+                $chatSlider = $container.find('.spa-slider');
+
+                //initialize the title and slider height
+                //and just bind the variable to the event handler
+                $chatSlider
+                .attr('title',configMap.extended_title)
+                .click(onClickSlider);
+
+                return true;
+            };
+
+            return {
+            initModule : initModule
+            };
+        }(jQuery));
+
+        //start spa app once the DOM is set and initialized
+        jQuery(document).ready(
+                function () { spa.initModule(jQuery('#spa')); }
+        );
+        </script>
+    </head>
+    <body>
+    <div id="spa">
+    </div>
+    </body>
+</html>
