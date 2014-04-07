@@ -1,0 +1,14 @@
+@import '../panel';
+
+.spa-shell-head {
+    .navbar-header {
+        i {
+            color: $textcolor;
+            cursor: pointer;
+            &:hover {
+                background-color: #273741;
+            }
+        }
+
+    }
+}
