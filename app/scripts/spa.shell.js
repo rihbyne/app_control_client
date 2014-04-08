@@ -9,13 +9,14 @@
         regexp : true, sloppy : true, vars : false,
         white : true
 */
-/*global $, spa */
+/*global $, spa.shell */
 
 spa.shell = (function () {
 
 //------------BEGIN MODULE SCOPE VARIABLES---------
   var
     configMap = {
+    mainHtml: String() + viewStore.getTrimmedString(),
     msgLogExtendTime : 1000,
     msgLogRetractedTime : 300,
     msgLogExtendHeight : 450,
@@ -146,7 +147,7 @@ spa.shell = (function () {
   initModule = function ( $container ) {
       // load html and map jQuery  collections
         stateMap.$container = $container;
-      //  $container.html( configMap.mainHtml );
+        $container.html( configMap.mainHtml );
         setJqueryMap();
 
         stateMap.isChatRetracted = true;
