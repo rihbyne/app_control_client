@@ -1,0 +1,59 @@
+@import 'spa';
+
+.spa-shell-head, .spa-shell-head-logo, .spa-shell-head-brand,
+.spa-shell-head-auth, .spa-shell-main, .spa-x-closed, .spa-shell-main-audioPlaylist,
+.spa-shell-main-gpioGrid, .spa-shell-main-serverStats, .spa-shell-main-signup .spa-shell-foot,
+.spa-shell-foot-productInfo .spa-shell-foot-audioStream .spa-shell-foot-msglog {
+}
+
+.spa-shell-main {
+    top: 140px;
+    left: 0;
+    bottom: 40px;
+    right: 0;
+}
+
+.spa-shell-main-audioPlaylist,
+.spa-shell-main-gpioGrid, .spa-shell-main-serverStats {
+    top : 0;
+    bottom : 0;
+}
+
+.spa-shell-main-audioPlaylist {
+    width : 250px;
+    background : #eee;
+}
+
+.spa-shell-main-audioPlaylist {
+    width : 0;
+}
+
+.spa-shell-main-gpioGrid {
+    left : 250px;
+    background: #ddd;
+}
+
+.spa-shell-main-serverStats {
+    left:500px;
+    right:0;
+    background: red;
+}
+
+.spa-shell-foot {
+}
+
+.spa-shell-foot-msglog {
+    position: absolute;
+    bottom: 3px;
+    right: 120px;
+    width: 300px;
+    height: 15px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: orange;
+    z-index: 1;
+}
+
+.spa-shell-foot-msglog:hover {
+    background: #a00;
+}
