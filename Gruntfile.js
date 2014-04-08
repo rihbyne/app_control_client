@@ -59,7 +59,7 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= yeoman.app %>/styles/**/*.{scss,sass}'],
         tasks: ['compass:server', 'autoprefixer']
       },
       gruntfile: {
@@ -68,7 +68,7 @@ module.exports = function (grunt) {
       livereload: {
         files: [
           '<%= yeoman.app %>/views/{,*//*}*.{html,jade}',
-          '{.tmp,<%= yeoman.app %>}/styles/{,*//*}*.css',
+          '{.tmp,<%= yeoman.app %>}/styles/**/*.css',
           '{.tmp,<%= yeoman.app %>}/scripts/{,*//*}*.js',
           '<%= yeoman.app %>/images/{,*//*}*.{png,jpg,jpeg,gif,webp,svg}',
         ],
