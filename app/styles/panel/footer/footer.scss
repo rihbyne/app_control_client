@@ -1,0 +1,10 @@
+@import '../panel';
+
+.spa-shell-foot  {
+    background-color: #4C5C66;
+        .spa-shell-foot-productInfo {
+            a {
+                text-decoration: $a-tag-decorate;
+            }
+    }
+}
