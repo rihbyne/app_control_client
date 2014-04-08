@@ -1,0 +1,30 @@
+<div ng-include="'partials/navbar'"></div>
+
+
+<div class="spa-shell-main container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="spa-shell-main-audioPlaylist"></div>
+            </div>
+            <div class="col-lg-6">
+                <div class="spa-shell-main-gpioGrid"></div>
+                <div class="spa-shell-main-signup spa-x-closed">
+                    <form action="/signup" class="form-signin" role="form" method="post">
+                        <h2 class="form-signin-heading">Sign in</h2>
+                        <input type="email" class="form-control" placeholder="email address" required autofocus />
+                        <input type="text" class="form-control" placeholder="username" required />
+                        <input type="password" class="form-control" placeholder="Password" required /></br>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">
+                            <i class="fa fa-key fa-lg"></i>
+                            Sign in</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="spa-shell-main-serverStats"></div>
+            </div>
+        </div>
+</div>
+
+
+<div ng-include="'partials/footer'"></div>
