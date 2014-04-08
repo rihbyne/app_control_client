@@ -5,7 +5,6 @@ public
 .sass-cache/
 app/bower_components
 heroku
-/views
 dist/
 
 # prevent following senseless files and folders from committing
