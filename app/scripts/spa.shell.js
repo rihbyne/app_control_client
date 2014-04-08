@@ -20,7 +20,7 @@ spa.shell = (function () {
     msgLogExtendTime : 1000,
     msgLogRetractedTime : 300,
     msgLogExtendHeight : 450,
-    msgLogRetractedHeight : 15,
+    msgLogRetractedHeight : 0,
     msgLogExtendedTitle : 'click to retract',
     msgLogRetractedTitle : 'click to expand'
   },
@@ -152,7 +152,8 @@ spa.shell = (function () {
 
         stateMap.isChatRetracted = true;
         jqueryMap.$msglog
-            .attr( 'title',configMap.msgLogRetractedTitle )
+            .attr( 'title',configMap.msgLogRetractedTitle );
+        $('#msglog-btn')
             .click( onClickMsgLog );
       };
     //End public method /initModule/
