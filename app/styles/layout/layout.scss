@@ -1,10 +1,12 @@
 @import '../spa.shell';
 
 
-.spa-shell-main-signup {
+.spa-shell-main-welcome {
     font-weight:500;
     width: 400px;
     margin-top: 150px;
+    margin-left: auto;
+   margin-right: auto;
     padding: 30px;
     line-height: 1.5;
     overflow: hidden;
@@ -13,9 +15,7 @@
     webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.13);
     box-shadow: 0 1px 0 rgba(255,255,255,0.13);
     border-radius:3px;
-    .form-signin-heading {
-        color: $textcolor;
-    }
+    color: $textcolor;
 }
 
 /* Responsive: Portrait tablets and up */
