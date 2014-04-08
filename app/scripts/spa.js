@@ -11,7 +11,7 @@
 */
 /*global $, spa */
 
-spa = (function () {
+var spa = (function () {
     var initModule = function ( $container ) {
         spa.shell.initModule( $container );
       };
