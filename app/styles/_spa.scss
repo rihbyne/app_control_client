@@ -1,0 +1,71 @@
+@import '../bower_components/bootstrap-sass/lib/bootstrap';
+
+//initialize needed variables here
+$icon-font-path: "/bower_components/bootstrap-sass/fonts/";
+$navy-blue: #6a7b86;
+$lightbg-image: url('/images/transbg.png') !default;
+$grainbg-image: url('/images/grain.png') !default;
+$textcolor : #EEE5E5 !default;
+$a-tag-decorate: none !default;
+
+/** Root namepace module and css file */
+/** reset selectors */
+ * {
+    margin: 0;
+    padding : 0;
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing : border-box;
+    box-sizing : border-box;
+ }
+
+h1,h2,h3,h4,h5,h6,p { margin-bottom : 10px; }
+ol,ul,dl { list-style-position : inside;}
+/** End reset */
+
+/** Begin standard selectors */
+body {
+    font-family : 'Open Sans','Lucida Sans','Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
+    background-color: $navy-blue;
+    background-image: $lightbg-image,$grainbg-image;
+    background-position: center top,center top;
+    background-repeat: repeat-x, repeat;
+    padding-bottom: 70px;
+    color: $text-color;
+    }
+
+/** Initialize configuration for media screens */
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+/** End init configuration*/
+
+/** End standard selectors */
+
+/** begin single page app namespace module 
+#spa {
+    top: 8px;
+    left: 8px;
+    bottom: 8px;
+    right: 8px;
+    min-height : 500px;
+    min-width : 500px;
+    overflow: hidden;
+    background-color : #fff;
+    border-radius: 0 8px 0 8px;
+}
+*/
+/** end spa namespace module */
+
+/** Begin utility selectors */
+.spa-x-select {}
+.spa-x-clearfloat {
+    height: 0 !important;
+    float: none !important;
+    visbility : hidden !important;
+    clear: both !important;
+}
+/** End utility selectors */
