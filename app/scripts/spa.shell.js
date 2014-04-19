@@ -46,7 +46,8 @@ spa.shell = (function () {
 
         jqueryMap = {
           $container : $container,
-          $msglog : $container.find('.spa-shell-foot-msglog')
+          $msglog : $container.find('.spa-shell-foot-msglog'),
+          $gpioGrid : $container.find('.spa-shell-main-gpioGrid')
         };
       };
 // END DOM METHOD /setJqueryMap/
@@ -150,6 +151,8 @@ spa.shell = (function () {
         $container.html( configMap.mainHtml );
         setJqueryMap();
 
+        spa.gpio.configModule({});
+        spa.gpio.initModule(jqueryMap.$gpioGrid);
         stateMap.isChatRetracted = true;
         jqueryMap.$msglog
             .attr( 'title',configMap.msgLogRetractedTitle );
