@@ -19,6 +19,7 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/panel/navbar/navbar.css"/>
     <link rel="stylesheet" href="styles/layout/layout.css"/>
+    <link rel="stylesheet" href="styles/layout/spa.gpioGrid.css"/>
     <link rel="stylesheet" href="styles/panel/footer/footer.css"/>
     <!-- endbuild -->
 
@@ -49,7 +50,10 @@
    <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/viewStore.js"></script>
     <script src="scripts/spa.js"></script>
+    <script src="scripts/spa.util.js"></script>
+    <script src="scripts/spa.model.js"></script>
     <script src="scripts/spa.shell.js"></script>
+    <script src="scripts/spa.gpio.js"></script>
     <script type="text/javascript">
           $(function () { spa.initModule($('#spa')); });
     </script>
