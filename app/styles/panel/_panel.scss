@@ -5,11 +5,9 @@ $navbgdefault: #63727E;
 $brandcolor: #fff;
 
 .navbar-default {
-    webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.13);
-    -moz-box-shadow: 0 1px 0 rgba(255,255,255,0.13);
-    -ms-box-shadow: 0 1px 0 rgba(255,255,255,0.13);
     box-shadow: 0 1px 0 rgba(255,255,255,0.13);
-    background: rgba(13,28,41,0.1);
+   // background: rgba(13,28,41,0.1);
+  background-color: #3D4E5D;
     font-family: 'Open Sans';
     font-weight: 500;
     border-color: $navbgdefault;
