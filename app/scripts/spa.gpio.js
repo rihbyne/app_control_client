@@ -20,38 +20,130 @@ spa.gpio = (function () {
     var
         configMap = {
             mainHtml: String()
-            +'<button class="btn btn-primary">Gpio Pin 11</button>'
-            +'<button id="gpio11-h" class="btn btn-success">high [1]</button>'
-            +'<button id="gpio11-l" class="btn btn-danger">low [0]</button><br>'
-                +'<button class="btn btn-primary">Gpio Pin 12</button>'
-                +'<button id="gpio12-h" class="btn btn-success">high [1]</button>'
-                +'<button id="gpio12-l" class="btn btn-danger">low [0]</button><br>'
-                +'<button class="btn btn-primary">Gpio Pin 13</button>'
-                +'<button id="gpio13-h" class="btn btn-success">high [1]</button>'
-                +'<button id="gpio13-l" class="btn btn-danger">low [0]</button><br>'
-                +'<button class="btn btn-primary">Gpio Pin 15</button>'
-                +'<button id="gpio15-h" class="btn btn-success">high [1]</button>'
-                +'<button id="gpio15-l" class="btn btn-danger">low [0]</button><br>'
-                +'<button class="btn btn-primary">Gpio Pin 16</button>'
-                +'<button id="gpio16-h" class="btn btn-success">high [1]</button>'
-                +'<button id="gpio16-l" class="btn btn-danger">low [0]</button><br>'
-                +'<button class="btn btn-primary">Gpio Pin 18</button>'
-                +'<button id="gpio18-h" class="btn btn-success">high[1]</button>'
-                +'<button id="gpio18-l" class="btn btn-danger">low[0]</button><br>'
-                +'<button class="btn btn-primary">Gpio Pin 22</button>'
-                +'<button id="gpio22-h" class="btn btn-success">high[1]</button>'
-                +'<button id="gpio22-l" class="btn btn-danger">low[0]</button>',
+            +'<ul id="gpio" class="nav nav-stacked">'
+            +'<li>'
+                + '<label><i class="fa fa-fw fa-repeat fa-spin"></i></label>'
+                +'<label class="btn btn-primary">gpio11 <i class="fa fa-cog fa-spin"></i></label>'
+                +'<div class="btn-group col-sm-offset-2" data-toggle="buttons">'
+                +'<label id="gpio11-h" class="btn btn-success">'
+                 +'<i class="fa fa-power-off"></i> high'
+                 +'<input type="radio" name="option">'
+                +'</label>'
+                +'<label id="gpio11-l" class="btn btn-danger">'
+                  +'<i class="fa fa-power-off"></i> low'
+                  +'<input type="radio" name="option">'
+                +'</label>'
+                +'</div>'
+            +'</li>'
+            +'<li>'
+                +'<label><i class="fa fa-fw fa-repeat fa-spin"></i></label>'
+                    +'<label class="btn btn-primary">gpio12 <i class="fa fa-cog fa-spin"></i></label>'
+                    +'<div class="btn-group col-sm-offset-2" data-toggle="buttons">'
+                    +'<label id="gpio12-h" class="btn btn-success">'
+                    +'<i class="fa fa-power-off"></i> high'
+                    +'<input type="radio" name="option">'
+                    +'</label>'
+                    +'<label id="gpio12-l" class="btn btn-danger">'
+                    +'<i class="fa fa-power-off"></i> low'
+                    +'<input type="radio" name="option">'
+                    +'</label>'
+                    +'</div>'
+             +'</li>'
+             +'<li>'
+                +'<label><i class="fa fa-fw fa-repeat fa-spin"></i></label>'
+                    +'<label class="btn btn-primary">gpio13 <i class="fa fa-cog fa-spin"></i></label>'
+                    +'<div class="btn-group col-sm-offset-2" data-toggle="buttons">'
+                    +'<label id="gpio13-h" class="btn btn-success">'
+                    +'<i class="fa fa-power-off"></i> high'
+                    +'<input type="radio" name="option">'
+                    +'</label>'
+                    +'<label id="gpio13-l" class="btn btn-danger">'
+                    +'<i class="fa fa-power-off"></i> low'
+                    +'<input type="radio" name="option">'
+                    +'</label>'
+                    +'</div>'
+                    +'</li>'
+                +'<li>'
+                +'<label><i class="fa fa-fw fa-repeat fa-spin"></i></label>'
+                    +'<label class="btn btn-primary">gpio15 <i class="fa fa-cog fa-spin"></i></label>'
+                    +'<div class="btn-group col-sm-offset-2" data-toggle="buttons">'
+                    +'<label id="gpio15-h" class="btn btn-success">'
+                    +'<i class="fa fa-power-off"></i> high'
+                    +'<input type="radio" name="option">'
+                    +'</label>'
+                    +'<label id="gpio15-l" class="btn btn-danger">'
+                    +'<i class="fa fa-power-off"></i> low'
+                    +'<input type="radio" name="option">'
+                    +'</label>'
+                    +'</div>'
+                    +'</li>'
+                + '<li>'
+                +'<label><i class="fa fa-fw fa-repeat fa-spin"></i></label>'
+                +'<label class="btn btn-primary">gpio16 <i class="fa fa-cog fa-spin"></i></label>'
+                +'<div class="btn-group col-sm-offset-2" data-toggle="buttons">'
+                +'<label id="gpio16-h" class="btn btn-success">'
+                +'<i class="fa fa-power-off"></i> high'
+                +'<input type="radio" name="option">'
+                +'</label>'
+                +'<label id="gpio16-l" class="btn btn-danger">'
+                +'<i class="fa fa-power-off"></i> low'
+                +'<input type="radio" name="option">'
+                +'</label>'
+                +'</div>'
+                +'</li>'
+                +'<li>'
+                +'<label><i class="fa fa-fw fa-repeat fa-spin"></i></label>'
+                +'<label class="btn btn-primary">gpio18 <i class="fa fa-cog fa-spin"></i></label>'
+                +'<div class="btn-group col-sm-offset-2" data-toggle="buttons">'
+                +'<label id="gpio18-h" class="btn btn-success">'
+                +'<i class="fa fa-power-off"></i> high'
+                +'<input type="radio" name="option">'
+                +'</label>'
+                +'<label id="gpio18-l" class="btn btn-danger">'
+                +'<i class="fa fa-power-off"></i> low'
+                +'<input type="radio" name="option">'
+                +'</label>'
+                +'</div>'
+                +'</li>'
+                +'<li>'
+                +'<label><i class="fa fa-fw fa-repeat fa-spin"></i></label>'
+                +'<label class="btn btn-primary">gpio22 <i class="fa fa-cog fa-spin"></i></label>'
+                +'<div class="btn-group col-sm-offset-2" data-toggle="buttons">'
+                +'<label id="gpio22-h" class="btn btn-success">'
+                +'<i class="fa fa-power-off"></i> high'
+                +'<input type="radio" name="option">'
+                +'</label>'
+                +'<label id="gpio22-l" class="btn btn-danger">'
+                +'<i class="fa fa-power-off"></i> low'
+                +'<input type="radio" name="option">'
+                +'</label>'
+                +'</div>'
+                +'</li>'
+            +'</ul>',
             settable_map : {}
         },
-
+        serverConfig = { domain : '192.168.1.5', port: 3030 },
         stateMap = { $container : null},
         jqueryMap = {},
 
-        setJqueryMap, configModule,initModule;
+        assembleAsyncReq,setJqueryMap, configModule,initModule;
 //-----------END MODULE SCOPE VARIABLES------------
 
 //-----------BEGIN UTILITY METHODS-----------------
-// example: getTrimmedString
+/*This method focuses on joining all the essential parts required for
+ * performing ajax calls to control server middleware. */
+    assembleAsyncReq = function(pin, signal) {
+        $.ajax({
+            type: "GET",
+            cache: false,
+            url:'http://'+serverConfig.domain+':'+serverConfig.port+'/gpio/'+pin+'/output/'+signal,
+            dataType: 'json',
+            success: function(data) {
+                console.log("gets here");
+            }
+        });
+
+    };
 //-----------END UTILITY METHODS-------------------
 
 //-----------BEGIN DOM METHODS---------------------
@@ -96,145 +188,49 @@ spa.gpio = (function () {
         $container.html(configMap.mainHtml);
         stateMap.$container = $container;
         setJqueryMap();
+
         $('#gpio11-h').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://localhost:3030/gpio/11/output/1',
-                dataType: 'json',
-                success: function(data) {
-                    alert("helco");
-                }
-            });
+            assembleAsyncReq(11,1);
+            //$('#gpio').children().eq(0).('<label><i class="fa fa-fw fa-repeat fa-spin"></i></label>');
         });
         $('#gpio11-l').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/11/output/0',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(11,0);
         });
         $('#gpio12-h').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/12/output/1',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(12,1);
         });
         $('#gpio12-l').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/12/output/0',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(12,0);
         });
         $('#gpio13-h').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/13/output/1',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(13,1);
         });
         $('#gpio13-l').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/13/output/0',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(13,0);
         });
         $('#gpio15-h').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/15/output/1',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(15,1);
         });
         $('#gpio15-l').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/15/output/0',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(15,0);
         });
         $('#gpio16-h').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/16/output/1',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(16,1);
         });
         $('#gpio16-l').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/16/output/0',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(16,0);
         });
         $('#gpio18-h').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/18/output/1',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(18,1);
         });
         $('#gpio18-l').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/18/output/0',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(18,0);
         });
         $('#gpio22-h').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/22/output/1',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(22,1);
         });
         $('#gpio22-l').click(function () {
-            $.ajax({
-                type: "GET",
-                url:'http://192.168.1.5:3030/gpio/22/output/0',
-                dataType: 'json',
-                success: function() {
-                    console.log("done");
-                }
-            });
+            assembleAsyncReq(22,0);
         });
 
     };
