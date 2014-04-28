@@ -60,7 +60,7 @@ viewStore = (function () {
         + '</div>'
         + '<div class="spa-shell-main container-fluid">'
         +        '<div class="spa-shell-main-audioPlaylist"></div>'
-        +        '<div class="jumbotron spa-shell-main-gpioGrid"></div>'
+        +        '<div class="spa-shell-main-gpioGrid"></div>'
         +        '<div class="spa-shell-main-welcome spa-x-closed"></div>'
         +        '<div class="spa-shell-main-serverStats"></div>'
         + '</div>'
